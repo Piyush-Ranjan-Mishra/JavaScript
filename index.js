@@ -2,12 +2,12 @@
 /**
 * Sorting character of strings
 * @args {String} input word
-* @return {String} Sorted character string eg acbd => abcd
+* @return {String} Sorted character string eg aaccbbbddd => abcd
 **/
 
 function hashString(str) {
     if(!!str && str.length >1 && /^[a-zA-Z]+$/.test(str)) {
-     return str.split("").sort().join("");
+     return return str.split("").sort().filter((item,index, self)=>(index>0 && item!=self[index-1])|| index==0).join("");
     }
     return undefined;
 }
