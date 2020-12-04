@@ -1,0 +1,17 @@
+/**
+Sum of odd Fibonacci series upto given number
+@ arg{number, number, number, number} pass 
+@ return {number} return sum of all odd fibonacci series
+**/
+function sumFibo(max, lower=0, upper=1, sum=1) {
+    let next = lower+upper;
+    if(next & 1 && max>= next ){
+        sum += next;
+    }
+    return max==0 ? 0: max >= next ? sumFibo(max, upper, next, sum): sum;
+}
+
+
+// test cases
+console.log(sumFibo(10)); // 10 {1+1+3+5}
+console.log(sumFibo(10000)); // 14328
